@@ -1,9 +1,10 @@
 import axios from "axios";
 import { GET_ERRORS, GET_STUDENT, GET_STUDENTS, DELETE_STUDENT } from "./types";
+import { API_ENDPOINT } from "../config";
 
 export const createStudent = (student, history) => async (dispatch) => {
   try {
-    await axios.post("/api/student/", student);
+    await axios.post(`${API_ENDPOINT}/api/student/`, student);
     history.push("/dashboard");
     dispatch({
       type: GET_ERRORS,
@@ -19,7 +20,7 @@ export const createStudent = (student, history) => async (dispatch) => {
 
 export const updateStudent = (student, id, history) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/student/${id}`, student);
+    const res = await axios.put(`${API_ENDPOINT}/api/student/${id}`, student);
     history.push("/dashboard");
     dispatch({
       type: GET_ERRORS,
@@ -34,7 +35,7 @@ export const updateStudent = (student, id, history) => async (dispatch) => {
 };
 
 export const getStudents = () => async (dispatch) => {
-  const res = await axios.get(`/api/student/allstudents`);
+  const res = await axios.get(`${API_ENDPOINT}/api/student/allstudents`);
 
   dispatch({
     type: GET_STUDENTS,
@@ -44,7 +45,7 @@ export const getStudents = () => async (dispatch) => {
 
 export const getStudent = (id, history) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/student/${id}`);
+    const res = await axios.get(`${API_ENDPOINT}/api/student/${id}`);
     dispatch({
       type: GET_STUDENT,
       payload: res.data,
@@ -55,7 +56,7 @@ export const getStudent = (id, history) => async (dispatch) => {
 };
 
 export const deleteStudent = (id) => async (dispatch) => {
-  await axios.delete(`/api/student/${id}`);
+  await axios.delete(`${API_ENDPOINT}/api/student/${id}`);
   dispatch({
     type: DELETE_STUDENT,
     payload: id,

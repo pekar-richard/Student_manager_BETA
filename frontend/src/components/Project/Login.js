@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { API_ENDPOINT } from "../../config";
 
 class Login extends Component {
   constructor() {
@@ -34,7 +35,7 @@ class Login extends Component {
       <div className=" login-box">
         <form
           className="form-signin"
-          action="http://localhost:8080/authenticateTheUser"
+          action={`${API_ENDPOINT}/authenticateTheUser`}
           method="POST"
         >
           <h1 className="h3 mb-3 font-weight-normal">

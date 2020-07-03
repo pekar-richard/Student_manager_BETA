@@ -1,9 +1,10 @@
 import axios from "axios";
 import { GET_ERRORS, GET_AGENTUR, GET_AGENTURS, DELETE_AGENTUR } from "./types";
+import { API_ENDPOINT } from "../config";
 
 export const createAgentur = (agentur, history) => async (dispatch) => {
   try {
-    await axios.post("/api/agentur/", agentur);
+    await axios.post(`${API_ENDPOINT}/api/agentur/`, agentur);
     history.push("/AgenturDashboard");
     dispatch({
       type: GET_ERRORS,
@@ -19,7 +20,7 @@ export const createAgentur = (agentur, history) => async (dispatch) => {
 
 export const updateAgentur = (agentur, id, history) => async (dispatch) => {
   try {
-    const res = await axios.put(`/api/agentur/${id}`, agentur);
+    const res = await axios.put(`${API_ENDPOINT}/api/agentur/${id}`, agentur);
     history.push(`/AgenturDashboard`);
     dispatch({
       type: GET_ERRORS,
@@ -34,7 +35,7 @@ export const updateAgentur = (agentur, id, history) => async (dispatch) => {
 };
 
 export const getAgenturs = () => async (dispatch) => {
-  const res = await axios.get("/api/agentur/allagenturs");
+  const res = await axios.get(`${API_ENDPOINT}/api/agentur/allagenturs`);
   dispatch({
     type: GET_AGENTURS,
     payload: res.data,
@@ -43,7 +44,7 @@ export const getAgenturs = () => async (dispatch) => {
 
 export const getAgentur = (id, history) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/agentur/${id}`);
+    const res = await axios.get(`${API_ENDPOINT}/api/agentur/${id}`);
     dispatch({
       type: GET_AGENTUR,
       payload: res.data,
@@ -54,7 +55,7 @@ export const getAgentur = (id, history) => async (dispatch) => {
 };
 
 export const deleteAgentur = (id) => async (dispatch) => {
-  await axios.delete(`/api/agentur/${id}`);
+  await axios.delete(`${API_ENDPOINT}/api/agentur/${id}`);
   dispatch({
     type: DELETE_AGENTUR,
     payload: id,
