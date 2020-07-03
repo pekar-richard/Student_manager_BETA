@@ -34,7 +34,7 @@ class Login extends Component {
       <div className=" login-box">
         <form
           className="form-signin"
-          action="/authenticateTheUser"
+          action="http://localhost:8080/authenticateTheUser"
           method="POST"
         >
           <h1 className="h3 mb-3 font-weight-normal">
