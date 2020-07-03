@@ -1,0 +1,228 @@
+body {
+}
+
+img {
+  width: 100%;
+}
+
+.navbar {
+  background-color: #e3f2fd;
+}
+.fa.fa-edit {
+  color: #18a2b9;
+}
+
+.list-group-item.delete:hover {
+  cursor: -webkit-grab;
+  background-color: #acffe3;
+}
+
+.list-group-item.update:hover {
+  cursor: -webkit-grab;
+  background-color: #acffe3;
+}
+
+.list-group-item.board:hover {
+  cursor: -webkit-grab;
+  background-color: #acffe3;
+}
+
+.fa.fa-minus-circle {
+  color: red;
+}
+
+.landing {
+  position: relative;
+  /* background: url("../img/showcase.jpg") no-repeat; */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+}
+
+.landing-inner {
+  padding-top: 80px;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}
+
+.lektion-in-past {
+  background-color: #e0ffff !important;
+  -webkit-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.lektion-in-future {
+  background-color: #ffe6e6 !important;
+  -webkit-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.linkButton {
+  text-decoration: none !important;
+}
+
+.student-aktiv {
+  background-color: #e0ffff !important;
+  -webkit-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.student-nichtaktiv {
+  background-color: #ffe6e6 !important;
+  -webkit-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 11px 15px 26px -9px rgba(0, 0, 0, 0.75);
+}
+
+.CreateAgenturButton {
+  float: right;
+  position: absolute;
+  top: 122px;
+  left: 205px;
+}
+
+.CreateStudentButton {
+  float: left;
+  margin: 5px;
+}
+
+.AgenturBoardButton {
+  float: right;
+  margin: 5px;
+}
+
+.RechnungBoardButton {
+  float: right;
+  margin: 5px;
+}
+
+.CreateLektionButton {
+  float: left;
+  margin: 5px;
+}
+
+.ZahlungBoardButton {
+  float: right;
+  margin: 5px;
+}
+
+.ZahlungBackButton {
+  float: right;
+  margin-left: 20px;
+}
+
+.CreateZahlungButton {
+  margin-left: 5px;
+}
+
+.CreateRechnungButton {
+  margin-left: 5px;
+}
+
+.zahlungagentur-select {
+  margin: 10px;
+}
+
+.login-box {
+  left: 35%;
+  top: 35%;
+  right: 35%;
+  bottom: 35%;
+  position: absolute;
+  text-align: center;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+.display-4 {
+  font-size: 2.5rem !important;
+}
+
+.studentButtons {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.topnav div {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .studentButtons div {
+    float: none;
+    width: 100%;
+  }
+
+  .chartstudentkontostand {
+    -webkit-box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+    padding: 1px;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+}
+
+.pokus {
+  -webkit-box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+  -moz-box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+  box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+}
+
+.chart {
+  -webkit-box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+  -moz-box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+  box-shadow: 18px 21px 9px -9px rgba(7, 1, 18, 0.19);
+}
+
+.chartstudentkontostand {
+  -webkit-box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 23px 0px rgba(0, 0, 0, 0.75);
+  padding: 1px 10px 20px 10px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.mt-5 {
+  text-align: center;
+}
+
+canvas {
+  height: 50vh !important;
+}
+
+.diagramms {
+  margin-right: 10px;
+}
