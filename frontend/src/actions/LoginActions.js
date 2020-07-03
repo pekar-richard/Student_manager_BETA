@@ -15,7 +15,7 @@ export const getAusloggen = (history) => async (dispatch) => {
 };
 
 export const getUser = () => async (dispatch) => {
-  const res = await axios.get("api/getuser");
+  const res = await axios.get("/api/getuser");
   dispatch({
     type: GET_USER,
     payload: res.data,
