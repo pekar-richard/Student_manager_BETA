@@ -51,7 +51,6 @@ export const getLogin = (userlogin, history) => async (dispatch) => {
       },
       body: JSON.stringify(userlogin),
     });
-    debugger;
     const data = await res.text();
 
     if (data === "true" || data === true) {

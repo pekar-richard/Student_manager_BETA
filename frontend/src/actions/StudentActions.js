@@ -5,12 +5,18 @@ import { API_ENDPOINT } from "../config";
 export const createStudent = (student, history) => async (dispatch) => {
   try {
     //await axios.post(`/api/student/`, student);
-    const res = await fetch(API_ENDPOINT + "/api/student", student, {
+    const res = await fetch(API_ENDPOINT + "/api/student/", {
       method: "POST",
       mode: "cors",
       cache: "no-cache",
       credentials: "include",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(student),
     });
+
+    const data = await res.json();
 
     history.push("/dashboard");
     dispatch({
