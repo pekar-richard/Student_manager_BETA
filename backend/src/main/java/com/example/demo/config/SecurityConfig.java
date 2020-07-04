@@ -71,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	.formLogin()
 		.loginPage("/showMyLoginPage")
 		.loginProcessingUrl("/authenticateTheUser")
-		.defaultSuccessUrl("http://localhost:3000/dashboard")
+		.defaultSuccessUrl("/")
 		.permitAll()
 	.and()	
 	.logout().permitAll()
