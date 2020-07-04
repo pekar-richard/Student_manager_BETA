@@ -15,11 +15,25 @@ export const getAusloggen = (history) => async (dispatch) => {
   });
 };
 
-export const getUser = () => async (dispatch) => {
+/*export const getUser = () => async (dispatch) => {
   const res = await axios.get(`/api/getuser`);
   dispatch({
     type: GET_USER,
     payload: res.data,
+  });
+};*/
+
+export const getUser = () => async (dispatch) => {
+  const res = await fetch(API_ENDPOINT + "/api/getuser", {
+    method: "GET",
+    mode: "cors",
+    cache: "no-cache",
+    credentials: "include",
+  });
+  const data = await res.text();
+  dispatch({
+    type: GET_USER,
+    payload: data,
   });
 };
 
