@@ -23,7 +23,6 @@ import com.example.demo.services.ZahlungService;
 
 @RestController
 @RequestMapping("/api/zahlung")
-@CrossOrigin //Important to get acces from react app to server
 public class ZahlungController {
 	
 	@Autowired

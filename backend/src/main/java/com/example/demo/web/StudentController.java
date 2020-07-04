@@ -23,7 +23,6 @@ import com.example.demo.services.StudentService;
 
 @RestController
 @RequestMapping("/api/student")
-@CrossOrigin
 public class StudentController {
 	
 	@Autowired

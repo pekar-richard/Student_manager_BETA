@@ -23,7 +23,6 @@ import com.example.demo.services.MapValidationErrorService;
 
 @RestController
 @RequestMapping("/api/lektion")
-@CrossOrigin //Important to get acces from react app to server
 public class LektionController {
 	
 	@Autowired

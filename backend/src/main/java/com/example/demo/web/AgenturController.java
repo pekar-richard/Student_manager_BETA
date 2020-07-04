@@ -22,7 +22,6 @@ import com.example.demo.services.MapValidationErrorService;
 
 @RestController
 @RequestMapping("/api/agentur")
-@CrossOrigin //Important to get acces from react app to server
 public class AgenturController {
 	
 	@Autowired
