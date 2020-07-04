@@ -1,9 +1,16 @@
 import axios from "axios";
 import { GET_ERRORS, GET_STUDENT, GET_STUDENTS, DELETE_STUDENT } from "./types";
+import { API_ENDPOINT } from "../config";
 
 export const createStudent = (student, history) => async (dispatch) => {
   try {
-    await axios.post(`/api/student/`, student);
+    //await axios.post(`/api/student/`, student);
+    const res = await fetch(API_ENDPOINT + "/api/student", student, {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "include",
+    });
 
     history.push("/dashboard");
     dispatch({
