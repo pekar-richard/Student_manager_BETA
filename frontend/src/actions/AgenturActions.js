@@ -4,6 +4,7 @@ import { API_ENDPOINT } from "../config";
 
 export const createAgentur = (agentur, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     await axios.post(`${API_ENDPOINT}/api/agentur/`, agentur);
     history.push("/AgenturDashboard");
     dispatch({
@@ -20,6 +21,7 @@ export const createAgentur = (agentur, history) => async (dispatch) => {
 
 export const updateAgentur = (agentur, id, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     const res = await axios.put(`${API_ENDPOINT}/api/agentur/${id}`, agentur);
     history.push(`/AgenturDashboard`);
     dispatch({
@@ -35,6 +37,7 @@ export const updateAgentur = (agentur, id, history) => async (dispatch) => {
 };
 
 export const getAgenturs = () => async (dispatch) => {
+  axios.defaults.withCredentials = true;
   const res = await axios.get(`${API_ENDPOINT}/api/agentur/allagenturs`);
   dispatch({
     type: GET_AGENTURS,
@@ -44,6 +47,7 @@ export const getAgenturs = () => async (dispatch) => {
 
 export const getAgentur = (id, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     const res = await axios.get(`${API_ENDPOINT}/api/agentur/${id}`);
     dispatch({
       type: GET_AGENTUR,
@@ -55,6 +59,7 @@ export const getAgentur = (id, history) => async (dispatch) => {
 };
 
 export const deleteAgentur = (id) => async (dispatch) => {
+  axios.defaults.withCredentials = true;
   await axios.delete(`${API_ENDPOINT}/api/agentur/${id}`);
   dispatch({
     type: DELETE_AGENTUR,

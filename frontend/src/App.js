@@ -24,6 +24,7 @@ import UpdateRechnung from "./components/Project/UpdateRechnung";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getAusloggen, getUser } from "./actions/LoginActions";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class App extends Component {
     this.state = {
       user: "null",
     };
+    axios.defaults.withCredentials = true;
   }
   componentDidMount() {
     this.props.getUser();

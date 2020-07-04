@@ -41,7 +41,7 @@ class Header extends Component {
             <ul className="navbar-nav  diagramms">
               <li className="nav-item">
                 <a className="nav-link" href="/">
-                  Diagramms
+                  Diagramme
                 </a>
               </li>
             </ul>

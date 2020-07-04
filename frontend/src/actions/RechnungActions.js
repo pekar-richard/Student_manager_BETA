@@ -9,6 +9,7 @@ import { API_ENDPOINT } from "../config";
 
 export const createRechnung = (rechnung, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     await axios.post(`${API_ENDPOINT}/api/rechnung/`, rechnung);
     history.push("/RechnungDashboard");
     dispatch({
@@ -25,6 +26,7 @@ export const createRechnung = (rechnung, history) => async (dispatch) => {
 
 export const updateRechnung = (rechnung, id, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     const res = await axios.put(`${API_ENDPOINT}/api/rechnung/${id}`, rechnung);
     history.push("/RechnungDashboard");
     dispatch({
@@ -40,6 +42,7 @@ export const updateRechnung = (rechnung, id, history) => async (dispatch) => {
 };
 
 export const getRechnungs = () => async (dispatch) => {
+  axios.defaults.withCredentials = true;
   const res = await axios.get(`${API_ENDPOINT}/api/rechnung/allrechnungs`);
   dispatch({
     type: GET_RECHNUNGS,
@@ -49,6 +52,7 @@ export const getRechnungs = () => async (dispatch) => {
 
 export const getRechnung = (id, history) => async (dispatch) => {
   try {
+    axios.defaults.withCredentials = true;
     const res = await axios.get(`${API_ENDPOINT}/api/rechnung/${id}`);
 
     dispatch({
@@ -61,6 +65,7 @@ export const getRechnung = (id, history) => async (dispatch) => {
 };
 
 export const deleteRechnung = (id) => async (dispatch) => {
+  axios.defaults.withCredentials = true;
   await axios.delete(`${API_ENDPOINT}/api/rechnung/${id}`);
   dispatch({
     type: DELETE_RECHNUNG,

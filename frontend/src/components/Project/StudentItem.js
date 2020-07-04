@@ -68,7 +68,7 @@ class StudentItem extends Component {
                 {student.studentNachname} {student.studentVorname}
               </h4>
               <p>
-                Kontostand: {student.studentKredit} euro <br /> Agentur:{" "}
+                Kontostand: {student.studentKredit} Euro <br /> Agentur:{" "}
                 {this.state.agenturs.map(
                   (agentur) =>
                     student.agenturIndex === agentur.agenturIndex &&

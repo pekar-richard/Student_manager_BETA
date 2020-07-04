@@ -33,3 +33,4 @@ export const GET_ZAHLUNGS_BYSTUDENTIDANDAGENTUR =
 //Types for LOGOUT ACTIONS
 export const GET_LOGOUT = "GET_LOGOUT";
 export const GET_USER = "GET_USER";
+export const GET_LOGIN = "GET_LOGIN";
