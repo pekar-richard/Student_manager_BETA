@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { getAusloggen } from "../../actions/LoginActions";
 import { withRouter } from "react-router-dom";
 import { API_ENDPOINTHEADER } from "../../config";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   constructor(props) {
@@ -19,9 +20,11 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-info  mb-4">
         <div className="container">
-          <a className="navbar-brand" href={`${API_ENDPOINTHEADER}/dashboard`}>
-            Studentenverwaltung
-          </a>
+          <React.Fragment>
+            <Link to="/dashboard" className="navbar-brand">
+              Studentenverwaltung
+            </Link>
+          </React.Fragment>
           <button
             className="navbar-toggler"
             type="button"
@@ -34,20 +37,19 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a
-                  className="nav-link"
-                  href={`${API_ENDPOINTHEADER}/dashboard`}
-                >
-                  Übersicht
-                </a>
+                <React.Fragment>
+                  <Link to="/dashboard" className="nav-link">
+                    Übersicht
+                  </Link>
+                </React.Fragment>
               </li>
             </ul>
             <ul className="navbar-nav  diagramms">
-              <li className="nav-item">
-                <a className="nav-link" href={`${API_ENDPOINTHEADER}/`}>
+              <React.Fragment>
+                <Link to="/" className="nav-link">
                   Diagramme
-                </a>
-              </li>
+                </Link>
+              </React.Fragment>
             </ul>
             <button
               className="btn btn-lg btn-warning"
