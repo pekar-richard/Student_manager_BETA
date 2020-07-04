@@ -1,5 +1,6 @@
 import axios from "axios";
 import { GET_LOGOUT, GET_USER, GET_LOGIN, GET_ERRORS } from "./types";
+import { API_ENDPOINT } from "../config";
 
 export const getAusloggen = (history) => async (dispatch) => {
   const res = await axios.get(`/api/logout`);
@@ -24,9 +25,22 @@ export const getUser = () => async (dispatch) => {
 
 export const getLogin = (userlogin, history) => async (dispatch) => {
   try {
-    const res = await axios.post(`/api/login`, userlogin);
-    console.log(res.data);
-    if (res.data === "true" || res.data === true) {
+    //const res = await axios.post(`/api/login`, userlogin);
+
+    const res = await fetch(API_ENDPOINT + "/api/login", {
+      method: "POST",
+      mode: "cors",
+      cache: "no-cache",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(userlogin),
+    });
+    debugger;
+    const data = await res.text();
+
+    if (data === "true" || data === true) {
       dispatch({
         type: GET_ERRORS,
         payload: "true",
@@ -34,12 +48,12 @@ export const getLogin = (userlogin, history) => async (dispatch) => {
     } else {
       dispatch({
         type: GET_LOGIN,
-        payload: res.data,
+        payload: data,
       });
 
       dispatch({
         type: GET_USER,
-        payload: res.data,
+        payload: data,
       });
       history.push(`/dashboard`);
     }
