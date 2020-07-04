@@ -5,12 +5,10 @@ import {
   GET_RECHNUNGS,
   DELETE_RECHNUNG,
 } from "./types";
-import { API_ENDPOINT } from "../config";
 
 export const createRechnung = (rechnung, history) => async (dispatch) => {
   try {
-    axios.defaults.withCredentials = true;
-    await axios.post(`${API_ENDPOINT}/api/rechnung/`, rechnung);
+    await axios.post(`/api/rechnung/`, rechnung);
     history.push("/RechnungDashboard");
     dispatch({
       type: GET_ERRORS,
@@ -26,8 +24,7 @@ export const createRechnung = (rechnung, history) => async (dispatch) => {
 
 export const updateRechnung = (rechnung, id, history) => async (dispatch) => {
   try {
-    axios.defaults.withCredentials = true;
-    const res = await axios.put(`${API_ENDPOINT}/api/rechnung/${id}`, rechnung);
+    const res = await axios.put(`/api/rechnung/${id}`, rechnung);
     history.push("/RechnungDashboard");
     dispatch({
       type: GET_ERRORS,
@@ -42,8 +39,7 @@ export const updateRechnung = (rechnung, id, history) => async (dispatch) => {
 };
 
 export const getRechnungs = () => async (dispatch) => {
-  axios.defaults.withCredentials = true;
-  const res = await axios.get(`${API_ENDPOINT}/api/rechnung/allrechnungs`);
+  const res = await axios.get(`/api/rechnung/allrechnungs`);
   dispatch({
     type: GET_RECHNUNGS,
     payload: res.data,
@@ -52,8 +48,7 @@ export const getRechnungs = () => async (dispatch) => {
 
 export const getRechnung = (id, history) => async (dispatch) => {
   try {
-    axios.defaults.withCredentials = true;
-    const res = await axios.get(`${API_ENDPOINT}/api/rechnung/${id}`);
+    const res = await axios.get(`/api/rechnung/${id}`);
 
     dispatch({
       type: GET_RECHNUNG,
@@ -65,8 +60,7 @@ export const getRechnung = (id, history) => async (dispatch) => {
 };
 
 export const deleteRechnung = (id) => async (dispatch) => {
-  axios.defaults.withCredentials = true;
-  await axios.delete(`${API_ENDPOINT}/api/rechnung/${id}`);
+  await axios.delete(`/api/rechnung/${id}`);
   dispatch({
     type: DELETE_RECHNUNG,
     payload: id,

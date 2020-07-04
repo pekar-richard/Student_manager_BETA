@@ -4,7 +4,6 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getLogin } from "../../actions/LoginActions";
-import { API_ENDPOINT } from "../../config";
 
 class Login extends Component {
   constructor() {

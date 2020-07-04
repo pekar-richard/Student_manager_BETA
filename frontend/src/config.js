@@ -1,3 +1,3 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-export const API_ENDPOINT = "https://studentenverwaltungapi.pekar.app";
+axios.defaults.baseURL = "http://localhost:8080";

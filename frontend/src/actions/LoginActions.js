@@ -1,10 +1,8 @@
 import axios from "axios";
 import { GET_LOGOUT, GET_USER, GET_LOGIN, GET_ERRORS } from "./types";
-import { API_ENDPOINT } from "../config";
 
 export const getAusloggen = (history) => async (dispatch) => {
-  axios.defaults.withCredentials = true;
-  const res = await axios.get(`${API_ENDPOINT}/api/logout`);
+  const res = await axios.get(`/api/logout`);
   history.push("/Login");
   dispatch({
     type: GET_LOGOUT,
@@ -17,8 +15,7 @@ export const getAusloggen = (history) => async (dispatch) => {
 };
 
 export const getUser = () => async (dispatch) => {
-  axios.defaults.withCredentials = true;
-  const res = await axios.get(`${API_ENDPOINT}/api/getuser`);
+  const res = await axios.get(`/api/getuser`);
   dispatch({
     type: GET_USER,
     payload: res.data,
@@ -27,8 +24,7 @@ export const getUser = () => async (dispatch) => {
 
 export const getLogin = (userlogin, history) => async (dispatch) => {
   try {
-    axios.defaults.withCredentials = true;
-    const res = await axios.post(`${API_ENDPOINT}/api/login`, userlogin);
+    const res = await axios.post(`/api/login`, userlogin);
     console.log(res.data);
     if (res.data === "true" || res.data === true) {
       dispatch({

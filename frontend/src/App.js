@@ -32,7 +32,6 @@ class App extends Component {
     this.state = {
       user: "null",
     };
-    axios.defaults.withCredentials = true;
   }
   componentDidMount() {
     this.props.getUser();
