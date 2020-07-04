@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getAusloggen } from "../../actions/LoginActions";
 import { withRouter } from "react-router-dom";
+import { API_ENDPOINT } from "../../config";
 
 class Header extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-info  mb-4">
         <div className="container">
-          <a className="navbar-brand" href="/dashboard">
+          <a className="navbar-brand" href={`${API_ENDPOINT}/dashboard`}>
             Studentenverwaltung
           </a>
           <button
@@ -33,14 +34,14 @@ class Header extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/dashboard">
+                <a className="nav-link" href={`${API_ENDPOINT}/dashboard`}>
                   Übersicht
                 </a>
               </li>
             </ul>
             <ul className="navbar-nav  diagramms">
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href={`${API_ENDPOINT}/`}>
                   Diagramme
                 </a>
               </li>
