@@ -61,7 +61,6 @@ public class StudentController {
 		if(errorMap!=null) return errorMap;
 		
 		Student thestudent= studentService.saveOrUpdateStudent(student);
-		
 			
 		return new ResponseEntity<Student>(thestudent, HttpStatus.CREATED);	
 	}
