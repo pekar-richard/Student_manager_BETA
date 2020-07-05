@@ -38,6 +38,7 @@ class ZahlungDashboard extends Component {
   componentDidMount() {
     const { studentIndex } = this.props.match.params;
     const { agenturIndex } = this.props.student.student;
+
     this.props.getZahlungsByStudentIDAndAgentur(
       studentIndex,
       agenturIndex,

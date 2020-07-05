@@ -4,20 +4,8 @@ import { API_ENDPOINT } from "../config";
 
 export const createStudent = (student, history) => async (dispatch) => {
   try {
-    //await axios.post(`/api/student/`, student);
-    const res = await fetch(API_ENDPOINT + "/api/student/", {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(student),
-    });
-
-    const data = await res.json();
-
+    axios.defaults.withCredentials = true;
+    await axios.post(`/api/student/`, student);
     history.push("/dashboard");
     dispatch({
       type: GET_ERRORS,
@@ -40,6 +28,7 @@ export const updateStudent = (student, id, history) => async (dispatch) => {
       payload: {},
     });
   } catch (error) {
+    console.log(error);
     dispatch({
       type: GET_ERRORS,
       payload: error.response.data,

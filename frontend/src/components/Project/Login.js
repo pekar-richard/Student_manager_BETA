@@ -13,7 +13,7 @@ class Login extends Component {
       message: "Sie haben keine gültigen Anmeldedaten eingegeben.",
       username: "",
       password: "",
-      errors: {},
+      errors: "false",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -73,7 +73,7 @@ class Login extends Component {
             value={this.state.password}
             onChange={this.onChange}
           />
-          {errors === "true" && <div>{this.state.message}</div>}
+          {this.state.errors === "true" && <div>{this.state.message}</div>}
           <input
             value="Anmelden"
             type="submit"

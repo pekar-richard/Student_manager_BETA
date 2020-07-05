@@ -144,6 +144,7 @@ class UpdateRechnung extends Component {
     const { errors } = this.state;
     const { agenturs } = this.props.agentur;
     const { students } = this.props.student;
+    const { rechnung } = this.props.rechnung;
     return (
       <div>
         <div className="project">
@@ -151,7 +152,7 @@ class UpdateRechnung extends Component {
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h5 className="display-4 text-center">
-                  Rechnung {this.state.rechnName} aktualisieren
+                  Rechnung {rechnung.rechnName} aktualisieren
                 </h5>
                 <br />
                 <hr />

@@ -27,7 +27,7 @@ class AddStudent extends Component {
       studentKomm: "",
       createdAt: "",
       updatedAt: "",
-      agenturIndex: null,
+      agenturIndex: 1,
       errors: {},
     };
 
@@ -65,8 +65,8 @@ class AddStudent extends Component {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
-    const { agenturIndex } = nextProps.agentur;
-    this.setState({ agenturIndex });
+    // const { agenturIndex } = nextProps.agentur;
+    // this.setState({ agenturIndex });
   }
 
   onChange(e) {
