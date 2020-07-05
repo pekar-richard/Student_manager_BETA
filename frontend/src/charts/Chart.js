@@ -220,6 +220,7 @@ class Chart extends Component {
             <div className="col-12">
               <MDBContainer className="chartstudentkontostand">
                 <h3 className="mt-5">Studenten Kontostand €</h3>
+                <br />
                 <HorizontalBar
                   data={this.state.dataHorizontal}
                   options={{ responsive: true }}
