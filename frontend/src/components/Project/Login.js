@@ -13,7 +13,7 @@ class Login extends Component {
       message: "Sie haben keine gültigen Anmeldedaten eingegeben.",
       username: "",
       password: "",
-      errors: "false",
+      loginerror: "false",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -32,9 +32,7 @@ class Login extends Component {
   }
   //life cycle hooks
   componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
+    this.setState({ loginerror: nextProps.login.loginerror });
   }
 
   onChange(e) {
@@ -42,7 +40,6 @@ class Login extends Component {
   }
 
   render() {
-    const { errors } = this.state;
     return (
       <div className=" login-box">
         <form className="form-signin" onSubmit={this.onSubmit}>
@@ -73,7 +70,7 @@ class Login extends Component {
             value={this.state.password}
             onChange={this.onChange}
           />
-          {this.state.errors === "true" && <div>{this.state.message}</div>}
+          {this.state.loginerror === "true" && <div>{this.state.message}</div>}
           <input
             value="Anmelden"
             type="submit"
@@ -86,12 +83,12 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  errors: PropTypes.string.isRequired,
+  login: PropTypes.object.isRequired,
   getLogin: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  errors: state.errors,
+  login: state.login,
 });
 
 export default connect(mapStateToProps, { getLogin })(Login);

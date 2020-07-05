@@ -41,6 +41,10 @@ export const updateRechnung = (rechnung, id, history) => async (dispatch) => {
 export const getRechnungs = () => async (dispatch) => {
   const res = await axios.get(`/api/rechnung/allrechnungs`);
   dispatch({
+    type: GET_ERRORS,
+    payload: {},
+  });
+  dispatch({
     type: GET_RECHNUNGS,
     payload: res.data,
   });
@@ -49,7 +53,10 @@ export const getRechnungs = () => async (dispatch) => {
 export const getRechnung = (id, history) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/rechnung/${id}`);
-
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_RECHNUNG,
       payload: res.data,

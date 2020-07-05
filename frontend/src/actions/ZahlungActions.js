@@ -46,6 +46,10 @@ export const updateZahlung = (zahlung, id, student_index, history) => async (
 
 export const getZahlungs = () => async (dispatch) => {
   const res = await axios.get(`/api/zahlung/allzahlungs`);
+  dispatch({
+    type: GET_ERRORS,
+    payload: {},
+  });
 
   dispatch({
     type: GET_ZAHLUNGS,
@@ -56,6 +60,10 @@ export const getZahlungs = () => async (dispatch) => {
 export const getZahlung = (id, history) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/zahlung/${id}`);
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_ZAHLUNG,
       payload: res.data,
@@ -70,6 +78,10 @@ export const getZahlungsByStudentID = (student_id, history) => async (
 ) => {
   try {
     const res = await axios.get(`/api/zahlung/student/${student_id}`);
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_ZAHLUNGS_BYSTUDENTID,
       payload: res.data,
@@ -86,6 +98,10 @@ export const getZahlungsByStudentIDAndAgentur = (
 ) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/zahlung/${student_id}/${agentur_id}`);
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_ZAHLUNGS_BYSTUDENTIDANDAGENTUR,
       payload: res.data,

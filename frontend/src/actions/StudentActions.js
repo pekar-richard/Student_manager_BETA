@@ -38,7 +38,10 @@ export const updateStudent = (student, id, history) => async (dispatch) => {
 
 export const getStudents = () => async (dispatch) => {
   const res = await axios.get(`/api/student/allstudents`);
-
+  dispatch({
+    type: GET_ERRORS,
+    payload: {},
+  });
   dispatch({
     type: GET_STUDENTS,
     payload: res.data,
@@ -48,6 +51,10 @@ export const getStudents = () => async (dispatch) => {
 export const getStudent = (id, history) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/student/${id}`);
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_STUDENT,
       payload: res.data,

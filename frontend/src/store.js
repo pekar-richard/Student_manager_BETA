@@ -7,7 +7,7 @@ const middleware = [thunk];
 
 let store;
 
-/*if (window.navigator.userAgent.includes("Chrome")) {
+if (window.navigator.userAgent.includes("Chrome")) {
   store = createStore(
     rootReducer,
     initalState,
@@ -23,12 +23,13 @@ let store;
     initalState,
     compose(applyMiddleware(...middleware))
   );
-}*/
+}
 
+/*
 store = createStore(
   rootReducer,
   initalState,
   compose(applyMiddleware(...middleware))
-);
+);*/
 
 export default store;

@@ -39,7 +39,10 @@ export const updateLektion = (lektion, id, student_index, history) => async (
 
 export const getLektions = () => async (dispatch) => {
   const res = await axios.get(`/api/lektion/alllektions`);
-
+  dispatch({
+    type: GET_ERRORS,
+    payload: {},
+  });
   dispatch({
     type: GET_LEKTIONS,
     payload: res.data,
@@ -49,7 +52,10 @@ export const getLektions = () => async (dispatch) => {
 export const getLektion = (id, history) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/lektion/${id}`);
-
+    dispatch({
+      type: GET_ERRORS,
+      payload: {},
+    });
     dispatch({
       type: GET_LEKTION,
       payload: res.data,

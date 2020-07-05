@@ -1,5 +1,11 @@
 import axios from "axios";
-import { GET_LOGOUT, GET_USER, GET_LOGIN, GET_ERRORS } from "./types";
+import {
+  GET_LOGOUT,
+  GET_USER,
+  GET_LOGIN,
+  GET_ERRORS,
+  GET_LOGINERROR,
+} from "./types";
 import { API_ENDPOINT } from "../config";
 
 export const getAusloggen = (history) => async (dispatch) => {
@@ -47,12 +53,12 @@ export const getLogin = (userlogin, history) => async (dispatch) => {
 
     if (data === "true" || data === true) {
       dispatch({
-        type: GET_ERRORS,
+        type: GET_LOGINERROR,
         payload: "true",
       });
     } else {
       dispatch({
-        type: GET_ERRORS,
+        type: GET_LOGINERROR,
         payload: "false",
       });
 
@@ -69,7 +75,7 @@ export const getLogin = (userlogin, history) => async (dispatch) => {
     }
   } catch (error) {
     dispatch({
-      type: GET_ERRORS,
+      type: GET_LOGINERROR,
       payload: error.response.data,
     });
   }

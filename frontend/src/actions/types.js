@@ -34,3 +34,4 @@ export const GET_ZAHLUNGS_BYSTUDENTIDANDAGENTUR =
 export const GET_LOGOUT = "GET_LOGOUT";
 export const GET_USER = "GET_USER";
 export const GET_LOGIN = "GET_LOGIN";
+export const GET_LOGINERROR = "GET_LOGINERROR";
