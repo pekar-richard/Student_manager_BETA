@@ -33,7 +33,6 @@ img {
 
 .landing {
   position: relative;
-  /* background: url("../img/showcase.jpg") no-repeat; */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -229,4 +228,19 @@ canvas {
 
 .container {
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 10px) {
+  .loginbox {
+    margin: 30vh auto;
+    width: 300px;
+  }
+}
+
+.loginbox {
+  padding: 5px;
+}
+
+.login_text {
+  text-align: center !important;
 }

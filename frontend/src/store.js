@@ -23,11 +23,11 @@ switch (browser && browser.name) {
     break;
 
   case "firefox":
-    console.log("kinda ok");
+    console.log("supported");
     break;
 
   default:
-    console.log("not supported");
+    console.log("supported");
 }
 
 if (DEBUG_MODE) {

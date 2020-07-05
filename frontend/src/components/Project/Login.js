@@ -41,9 +41,9 @@ class Login extends Component {
 
   render() {
     return (
-      <div className=" login-box">
+      <div className="loginbox">
         <form className="form-signin" onSubmit={this.onSubmit}>
-          <h1 className="h3 mb-3 font-weight-normal">
+          <h1 className="h4 font-weight-normal login_text">
             Anmeldung für registrierte Benutzer
           </h1>
           <label htmlFor="inputEmail" className="sr-only">
@@ -74,7 +74,7 @@ class Login extends Component {
           <input
             value="Anmelden"
             type="submit"
-            className="btn btn-primary btn-block mt-4"
+            className="btn btn-primary btn-block mt-4 col-lg-12 col-md-12 col-sm-12"
           />
         </form>
       </div>
