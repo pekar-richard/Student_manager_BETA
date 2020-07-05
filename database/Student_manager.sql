@@ -135,7 +135,6 @@ CREATE TABLE `rechnung` (
 INSERT INTO `rechnung` VALUES 
 (1,0,'Pekar, Milan','','Trnavske myto','91921','Bratislava','Slowakia','12345679','1080804252','2020-06-11','2020-06-11',4,4);
 
-
     DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
@@ -148,7 +147,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` 
 VALUES 
 ('Richard','{bcrypt}$2y$12$1wLeNL.zwjXnNv9QgshA2.qaobwYdPQwbrYnH1/UUl.gP5f9upvOu',1),
-('Stefan','{bcrypt}$2y$12$1wLeNL.zwjXnNv9QgshA2.qaobwYdPQwbrYnH1/UUl.gP5f9upvOu',1);
+('Stefan','{bcrypt}$2y$12$1wLeNL.zwjXnNv9QgshA2.qaobwYdPQwbrYnH1/UUl.gP5f9upvOu',1),
+('Jaroslav','{bcrypt}$2y$12$1wLeNL.zwjXnNv9QgshA2.qaobwYdPQwbrYnH1/UUl.gP5f9upvOu',1);
 
 DROP TABLE IF EXISTS `authorities`;
 CREATE TABLE `authorities` (
@@ -164,4 +164,5 @@ CREATE TABLE `authorities` (
 INSERT INTO `authorities` 
 VALUES 
 ('Richard','ROLE_USER'),
-('Stefan','ROLE_USER');
+('Stefan','ROLE_USER'),
+('Jaroslav','ROLE_USER');
